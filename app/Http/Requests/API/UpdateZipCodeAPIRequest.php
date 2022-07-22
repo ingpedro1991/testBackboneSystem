@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Http\Requests\API;
+
+use App\Models\ZipCode;
+use InfyOm\Generator\Request\APIRequest;
+
+class UpdateZipCodeAPIRequest extends APIRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        $rules = ZipCode::$rules;
+        
+        return $rules;
+    }
+}
